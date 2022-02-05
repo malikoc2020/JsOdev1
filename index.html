@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: rgb(219, 178, 42);
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color: grey; padding-top: 100px;">
+    
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <p id="p5"></p>
+
+
+
+
+    <script type="text/javascript">
+        const isim = prompt("İsminiz: ");
+
+        const isimTam = `Merhaba, <strong>${isim}</strong>! Hoş geldin!`;
+
+        const weekday = ["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"];
+        
+
+        let p1 = document.getElementById("p1");
+        let p2 = document.getElementById("p2");
+        let p3 = document.getElementById("p3");
+        let p4 = document.getElementById("p4");
+        let p5 = document.getElementById("p5"); 
+
+        p1.innerHTML = "<strong>KODLUYORUZ</strong>";
+        p2.innerHTML = isimTam;
+        setTime();
+        p4.innerHTML = "tarihinde <strong>Kodluyoruz Frontend Web Devolopment Patikası</strong>'nın Javascript";
+        p5.innerHTML = "bölümü 1. Ödevindesiniz";
+
+        setInterval(setTime, 1000);
+
+        function setTime()
+        {
+            const d = new Date();
+            let day = weekday[d.getDay()];
+
+            let minutes = d.getMinutes();
+            let hours = d.getHours() + 1; //eastern time zone
+            let seconds = d.getSeconds();
+            p3.innerHTML = `${hours} : ${minutes} : ${seconds} ${day}`;
+
+
+        }
+    </script>
+</body>
+</html>
